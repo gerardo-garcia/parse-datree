@@ -1,0 +1,47 @@
+CONTAINERS_INCORRECT_PRIVILEGED_VALUE_TRUE:
+    relevance: 01-HIGH
+    impact: High risk, as if running over the host directly
+CONTAINERS_INCORRECT_RUNASNONROOT_VALUE:
+    relevance: 01-HIGH
+    impact: Unnecessary privileges ease exploitation of any vulnerabilities
+CONTAINERS_INCORRECT_RUNASUSER_VALUE_LOWUID:
+    relevance: 01-HIGH
+    impact: >
+        A UID number lower than 10000 allows accessing host-based files in
+        case a container gains access to a host's file system
+CONTAINERS_INVALID_CAPABILITIES_VALUE:
+    relevance: 01-HIGH
+    impact: Insecure kernel capabilities available from pod at runtime
+CONTAINERS_MISSING_KEY_ALLOWPRIVILEGEESCALATION:
+    relevance: 01-HIGH
+    impact: Escalated container privileges give an entry point for successful attacks to the platform
+CONTAINERS_MISSING_READINESSPROBE_KEY:
+    relevance: 01-HIGH
+    impact: Kubernetes cannot determine if pod is ready to receive traffic
+CONTAINERS_MISSING_LIVENESSPROBE_KEY:
+    relevance: 01-HIGH
+    impact: Kubernetes cannot determine if pod is alive
+CONTAINER_CVE2021_25741_INCORRECT_SUBPATH_KEY:
+    relevance: 01-HIGH
+    impact: May gain access to the host filesystem and compromise the Kubernetes node
+DEPLOYMENT_INCORRECT_REPLICAS_VALUE:
+    relevance: 01-HIGH
+    impact: No HA. Self-healing cannot avoid service disruption
+CONTAINERS_INCORRECT_READONLYROOTFILESYSTEM_VALUE:
+    relevance: 02-MEDIUM
+    impact: Risk of image/SW tampering
+EKS_INVALID_CAPABILITIES_EKS:
+    relevance: 02-MEDIUM
+    impact: EKS only
+CONTAINERS_MISSING_MEMORY_LIMIT_KEY:
+    relevance: 02-MEDIUM
+    impact: Risk of a pod to consume all memory resources on a node
+CONTAINERS_MISSING_MEMORY_REQUEST_KEY:
+    relevance: 02-MEDIUM
+    impact: Risk of a pod to be starved of memory resources
+CIS_INVALID_VALUE_SECCOMP_PROFILE:
+    relevance: 03-LOW
+    impact: Docker runtime only
+CIS_MISSING_VALUE_DROP_NET_RAW:
+    relevance: 03-LOW
+    impact: Docker runtime only
