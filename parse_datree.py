@@ -145,8 +145,12 @@ if __name__ == "__main__":
                 internal_id += 1
                 issue_id = rule["identifier"]
                 issue = rule["name"]
-                relevance = MAP_ISSUES[issue_id]["relevance"]
-                impact = MAP_ISSUES[issue_id]["impact"]
+                try:
+                    relevance = MAP_ISSUES[issue_id]["relevance"]
+                except KeyError:
+                    relevance = "UNKNOW"
+                try:
+                    impact = MAP_ISSUES[issue_id]["impact"]
                 description = rule["messageOnFailure"]
                 details = rule["occurrencesDetails"]
                 details_list = []
