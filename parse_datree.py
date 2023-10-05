@@ -145,13 +145,11 @@ if __name__ == "__main__":
                 internal_id += 1
                 issue_id = rule["identifier"]
                 issue = rule["name"]
-                try:
-                    relevance = MAP_ISSUES[issue_id]["relevance"]
-                except KeyError:
-                    relevance = "UNKNOW"
-                try:
-                    impact = MAP_ISSUES[issue_id]["impact"]
                 description = rule["messageOnFailure"]
+                # Get relevance and impact if the issue_id exsits
+                relevance = MAP_ISSUES.get(issue_id, {}).get("relevance", "UNKNOWN")
+                impact = MAP_ISSUES.get(issue_id, {}).get("impact", "UNKNOWN")
+                # Get details
                 details = rule["occurrencesDetails"]
                 details_list = []
                 for oc in details:
