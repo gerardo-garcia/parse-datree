@@ -148,9 +148,11 @@ if __name__ == "__main__":
                 try:
                     relevance = MAP_ISSUES[issue_id]["relevance"]
                 except KeyError:
-                    relevance = "UNKNOW"
+                    relevance = "UNKNOWN"
                 try:
                     impact = MAP_ISSUES[issue_id]["impact"]
+                except KeyError:
+                    relevance = "UNKNOWN"
                 description = rule["messageOnFailure"]
                 details = rule["occurrencesDetails"]
                 details_list = []
